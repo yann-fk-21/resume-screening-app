@@ -1,161 +1,169 @@
-# Application de Classification de CV (Resume Screening App)
+# Resume Screening Application
 
-Une application web intelligente basée sur le machine learning qui classe automatiquement les CV en différentes catégories professionnelles. L'application utilise des modèles pré-entraînés pour analyser le contenu d'un CV et identifier la catégorie professionnelle la plus appropriée.
+An intelligent web application powered by machine learning that automatically classifies resumes into different professional categories. The application uses pre-trained models to analyze resume content and identify the most appropriate professional category.
 
-## Fonctionnalités
+## Features
 
-- **Classification automatique** : Analyse et classe les CV en 24 catégories professionnelles différentes
-- **Interface intuitive** : Interface web simple et conviviale construite avec Streamlit
-- **Support PDF** : Extraction et analyse automatique du texte depuis les fichiers PDF
-- **Traitement du texte** : Nettoyage et préparation automatique du texte pour une meilleure précision
-- **Prédiction en temps réel** : Résultats instantanés après l'upload du CV
+* **Automatic classification**: Analyzes and classifies resumes into 24 different professional categories
+* **User-friendly interface**: Simple and intuitive web interface built with Streamlit
+* **PDF support**: Automatic text extraction and analysis from PDF files
+* **Text processing**: Automatic text cleaning and preprocessing for improved accuracy
+* **Real-time prediction**: Instant results after uploading a resume
 
-## Catégories supportées
+## Supported Categories
 
-L'application peut classifier les CV dans les catégories suivantes :
+The application can classify resumes into the following categories:
 
-- Data Science
-- HR (Ressources Humaines)
-- Advocate (Avocat)
-- Arts
-- Web Designing
-- Mechanical Engineer
-- Sales (Ventes)
-- Health and fitness
-- Civil Engineer
-- Java Developer
-- Business Analyst
-- SAP Developer
-- Automation Testing
-- Electrical Engineering
-- Operations Manager
-- Python Developer
-- DevOps Engineer
-- Network Security Engineer
-- PMO (Project Management Office)
-- Database
-- Hadoop
-- ETL Developer
-- DotNet Developer
-- Blockchain
-- Testing
+* Data Science
+* HR (Human Resources)
+* Advocate
+* Arts
+* Web Designing
+* Mechanical Engineer
+* Sales
+* Health and Fitness
+* Civil Engineer
+* Java Developer
+* Business Analyst
+* SAP Developer
+* Automation Testing
+* Electrical Engineering
+* Operations Manager
+* Python Developer
+* DevOps Engineer
+* Network Security Engineer
+* PMO (Project Management Office)
+* Database
+* Hadoop
+* ETL Developer
+* DotNet Developer
+* Blockchain
+* Testing
 
-## Technologies utilisées
+## Technologies Used
 
-- **Python** : Langage de programmation principal
-- **Streamlit** : Framework pour l'interface web
-- **scikit-learn** : Bibliothèque de machine learning
-- **NLTK** : Traitement du langage naturel
-- **PyPDF2** : Extraction de texte depuis les fichiers PDF
-- **joblib** : Sauvegarde et chargement des modèles
-- **pandas** : Manipulation des données
-- **numpy** : Calculs numériques
+* **Python**: Main programming language
+* **Streamlit**: Web application framework
+* **scikit-learn**: Machine learning library
+* **NLTK**: Natural language processing
+* **PyPDF2**: Text extraction from PDF files
+* **joblib**: Model saving and loading
+* **pandas**: Data manipulation
+* **numpy**: Numerical computations
 
 ## Installation
 
-### Prérequis
+### Prerequisites
 
-- Python 3.7 ou supérieur
-- pip (gestionnaire de paquets Python)
+* Python 3.7 or higher
+* pip (Python package manager)
 
-### Étapes d'installation
+### Installation Steps
 
-1. **Cloner le dépôt** (ou télécharger le projet)
+1. **Clone the repository** (or download the project)
+
    ```bash
    git clone https://github.com/yann-fk-21/resume-screening-app.git
    cd resume-screening-app
    ```
 
-2. **Créer un environnement virtuel** (recommandé)
+2. **Create a virtual environment** (recommended)
+
    ```bash
    python -m venv venv
    ```
 
-3. **Activer l'environnement virtuel**
-   
-   Sur Windows :
+3. **Activate the virtual environment**
+
+   On Windows:
+
    ```bash
    venv\Scripts\activate
    ```
-   
-   Sur Linux/Mac :
+
+   On Linux/Mac:
+
    ```bash
    source venv/bin/activate
    ```
 
-4. **Installer les dépendances**
+4. **Install dependencies**
+
    ```bash
    pip install -r requirements.txt
    ```
 
-5. **Télécharger les données NLTK** (automatique au premier lancement)
-   - Les données nécessaires (stopwords, punkt) seront téléchargées automatiquement lors du premier lancement de l'application
+5. **Download NLTK data** (automatic on first launch)
 
-## Utilisation
+   * Required data (stopwords, punkt) will be downloaded automatically when the application runs for the first time.
 
-1. **Lancer l'application**
+## Usage
+
+1. **Run the application**
+
    ```bash
    streamlit run app.py
    ```
 
-2. **Accéder à l'interface**
-   - L'application s'ouvrira automatiquement dans votre navigateur
-   - L'URL par défaut est : `http://localhost:8501`
+2. **Access the interface**
 
-3. **Utiliser l'application**
-   - Cliquez sur "Upload your resume here"
-   - Sélectionnez un fichier PDF contenant votre CV
-   - Attendez quelques secondes pour le traitement
-   - La catégorie professionnelle détectée s'affichera automatiquement
+   * The application will automatically open in your browser.
+   * The default URL is: `http://localhost:8501`
 
-## Structure du projet
+3. **Use the application**
+
+   * Click on "Upload your resume here"
+   * Select a PDF file containing your resume
+   * Wait a few seconds for processing
+   * The detected professional category will be displayed automatically
+
+## Project Structure
 
 ```
 resume-screening-app/
 │
-├── app.py                      # Application principale Streamlit
-├── requirements.txt            # Dépendances Python
-├── README.md                   # Documentation du projet
-├── LICENSE                     # Licence du projet
+├── app.py                      # Main Streamlit application
+├── requirements.txt            # Python dependencies
+├── README.md                   # Project documentation
+├── LICENSE                     # Project license
 │
-├── models/                     # Modèles de machine learning pré-entraînés
-│   ├── clf_model.pkl          # Modèle de classification
-│   └── tfidf_model.pkl        # Modèle TF-IDF pour la vectorisation
+├── models/                     # Pre-trained machine learning models
+│   ├── clf_model.pkl           # Classification model
+│   └── tfidf_model.pkl         # TF-IDF vectorization model
 │
-├── dataset/                    # Dataset d'entraînement
+├── dataset/                    # Training dataset
 │   └── UpdatedResumeDataSet.csv
 │
-├── notebook/                   # Notebook Jupyter pour l'analyse et l'entraînement
+├── notebook/                   # Jupyter notebook for analysis and training
 │   └── modeling.ipynb
 │
-└── utils/                      # Utilitaires
-    └── utils.py                # Fonctions de nettoyage de texte
+└── utils/                      # Utilities
+    └── utils.py                # Text cleaning functions
 ```
 
-## Fonctionnement technique
+## Technical Workflow
 
-1. **Extraction du texte** : Le texte est extrait du fichier PDF uploadé
-2. **Nettoyage** : Le texte est nettoyé (suppression des URLs, caractères spéciaux, etc.)
-3. **Vectorisation** : Le texte nettoyé est transformé en vecteur numérique via TF-IDF
-4. **Classification** : Le modèle de classification prédit la catégorie professionnelle
-5. **Affichage** : Le résultat est affiché à l'utilisateur
+1. **Text extraction**: Text is extracted from the uploaded PDF file
+2. **Cleaning**: The text is cleaned (removal of URLs, special characters, etc.)
+3. **Vectorization**: The cleaned text is transformed into a numerical vector using TF-IDF
+4. **Classification**: The classification model predicts the professional category
+5. **Display**: The result is shown to the user
 
-## Modèles
+## Models
 
-Les modèles pré-entraînés (`clf_model.pkl` et `tfidf_model.pkl`) sont inclus dans le dossier `models/`. Ces modèles ont été entraînés sur le dataset `UpdatedResumeDataSet.csv` et utilisent :
+The pre-trained models (`clf_model.pkl` and `tfidf_model.pkl`) are included in the `models/` folder. These models were trained on the `UpdatedResumeDataSet.csv` dataset and use:
 
-- **TF-IDF Vectorizer** : Pour transformer le texte en caractéristiques numériques
-- **Classifier** : Modèle de classification supervisée (détails dans le notebook `modeling.ipynb`)
+* **TF-IDF Vectorizer**: To transform text into numerical features
+* **Classifier**: Supervised classification model (see details in the `modeling.ipynb` notebook)
 
-## Entraînement des modèles
+## Model Training
 
-Si vous souhaitez réentraîner les modèles :
+If you would like to retrain the models:
 
-1. Ouvrir le notebook `notebook/modeling.ipynb`
-2. Exécuter toutes les cellules
-3. Les nouveaux modèles seront sauvegardés dans le dossier `models/`
+1. Open the `notebook/modeling.ipynb` notebook
+2. Run all cells
+3. The new models will be saved in the `models/` folder
 
-## Licence
+## License
 
-Voir le fichier `LICENSE` pour plus de détails.
-
+See the `LICENSE` file for more details.
