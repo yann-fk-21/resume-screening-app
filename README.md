@@ -109,7 +109,7 @@ The application can classify resumes into the following categories:
 
 ## Usage
 
-1. 🚀 **Run the application**
+1. **Run the application**
 
    ```bash
    streamlit run app.py
